@@ -3,25 +3,23 @@ a = True
 
 def send_email(message, recipient, *, sender='university.help@gmail.com'):
     global a
-    if recipient.endswith('.ru' or '.com' or '.net'):
+    if recipient.endswith('.ru') or recipient.endswith('.com') or recipient.endswith('.net'):
         a = True
     else:
         print(f'Невозможно отправить письмо с адреса{sender} на адрес{recipient}')
-    for i in recipient:
-        if recipient.find('@'):
-            a = True
-        else:
-            print(f'Невозможно отправить письмо с адреса{sender} на адрес{recipient}')
+    if recipient.find('@'):
+        a = True
+    else:
+        print(f'Невозможно отправить письмо с адреса{sender} на адрес{recipient}')
 
-    if sender.endswith('.ru' or '.com' or '.net'):
+    if sender.endswith('.ru') or sender.endswith('.com') or sender.endswith('.net'):
         a = True
     else:
         print(f'Невозможно отправить письмо с адреса{sender}на адрес{recipient}')
-    for i in sender:
-        if sender.find('@'):
-            a = True
-        else:
-            print(f'Невозможно отправить письмо с адреса{sender} на адрес{recipient}')
+    if sender.find('@'):
+        a = True
+    else:
+        print(f'Невозможно отправить письмо с адреса{sender} на адрес{recipient}')
     if recipient == sender:
         print('Нельзя отправить письмо самому себе!')
     else:
